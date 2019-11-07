@@ -6,5 +6,8 @@
 </head>
 <body>
     <h1 th:text="'My messaging app!'">Welcome to my message applications!</h1>
+    <ul>
+        <li th:each="message: ${messages}" th:text="${message.body}"></li>
+    </ul>
 </body>
 </html>
