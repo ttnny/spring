@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>All products</title>
+</head>
+<body>
+<header th:replace="fragments/components :: header"></header>
+<h1>All of our products (<span th:text="${products.size()}"></span>
+    total products)</h1>
+
+<table th:if="${!products.isEmpty()}">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Description</th>
+        <th>On Sale?</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="product : ${products}">
+        <td th:text="${product.name}">ABC Item</td>
+        <td th:text="${product.price}">$12.99</td>
+        <td th:text="${product.description}">A product</td>
+        <td th:switch="${product.onSale.toString()}">
+            <span th:case="NO_SALE">Not on sale</span>
+            <span th:case="ON_SALE">On sale</span>
+            <span th:case="PREMIER_ITEM">A premier item!</span>
+        </td>
+    </tr>
+    <tr th:remove="all">
+        <td>ABC Item</td>
+        <td>$12.99</td>
+        <td>A product</td>
+        <td>Not on Sale</td>
+    </tr>
+    <tr th:remove="all">
+        <td>ABC Item</td>
+        <td>$12.99</td>
+        <td>A product</td>
+        <td>Not on Sale</td>
+    </tr>
+    <tr th:remove="all">
+        <td>ABC Item</td>
+        <td>$12.99</td>
+        <td>A product</td>
+        <td>Not on Sale</td>
+    </tr>
+    </tbody>
+</table>
+<p th:if="${products.isEmpty()}">There are not products available...</p>
+
+<footer th:replace="fragments/components :: footer"></footer>
+</body>
+</html>

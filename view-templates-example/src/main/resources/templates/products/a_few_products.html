@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>A few products</title>
+</head>
+<body>
+<header th:replace="fragments/components :: header"></header>
+<h1>All my products!</h1>
+<p>Product #1 - <span th:text="${product1.name}"></span></p>
+<p>Product #2 - <span th:text="${product2.name}"></span></p>
+<footer th:replace="fragments/components :: footer"></footer>
+</body>
+</html>
