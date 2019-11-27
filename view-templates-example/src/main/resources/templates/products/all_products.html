@@ -28,6 +28,9 @@
             <span th:case="ON_SALE">On sale</span>
             <span th:case="PREMIER_ITEM">A premier item!</span>
         </td>
+        <td>
+            <a th:href="@{'/products/' + ${product.name}}" href="#">View</a>
+        </td>
     </tr>
     <tr th:remove="all">
         <td>ABC Item</td>

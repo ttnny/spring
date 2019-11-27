@@ -1,15 +1,11 @@
 package edu.greenriver.it.viewtemplatesexample.model
 
+@Entity
 class Product(
         var name: String,
         var price: Double,
         var description: String,
-        var onSale: SaleType
-)
-
-enum class SaleType {
-    NO_SALE,
-    ON_SALE,
-    PREMIER_ITEM,
-    LIMITED_ITEM
+        var onSale: Boolean
+) {
+    constructor(): this("", 0.0, "", false)
 }
