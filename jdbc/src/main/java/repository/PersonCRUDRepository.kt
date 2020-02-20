@@ -1,6 +1,5 @@
 package repository
 
-import com.mysql.cj.x.protobuf.MysqlxPrepare
 import entities.Person
 import java.sql.PreparedStatement
 import java.sql.ResultSet
